@@ -1,2 +1,23 @@
-# chatbot-project
-EcoSystem QE 30 Days Goal Chat Bot is an interactive, AI-powered chat assistant designed to guide new hires at Red Hat's EcoSystem QE team through their 30-day onboarding program.
+# Chatbot Project
+
+This project implements an onboarding chatbot for EcoSystem QE. The chatbot uses RAG (Retrieval-Augmented Generation) and integrates with the MaaS platform.
+
+## Requirements
+- Python 3.9+
+- [Streamlit](https://streamlit.io/)
+- MaaS API access
+- Poetry (for dependency management)
+
+## Setup
+1. Clone the repository.
+2. Install dependencies:
+   ```bash
+   poetry install
+
+## Run
+1. poetry run streamlit run app/main.py
+
+## Features
+1. Document upload (PDF)
+2. Onboarding question answering
+3. RAG-based chatbot using the Mistral model
