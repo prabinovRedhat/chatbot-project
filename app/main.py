@@ -4,11 +4,18 @@ from langchain.chains import RetrievalQA
 from langchain.vectorstores import Chroma
 from langchain.embeddings import OpenAIEmbeddings
 from langchain.document_loaders import PyPDFLoader
+from dotenv import load_dotenv
 import requests
 
-# Set up API details
-API_KEY = "18ecfd3b6cef767eb257ede2d29ce3fa"
-ENDPOINT_URL = "https://mistral-7b-instruct-v0-3-maas-apicast-production.apps.prod.rhoai.rh-aiservices-bu.com:443/v1/completions"
+# Load environment variables
+load_dotenv()
+
+# Fetch API details from .env
+API_KEY = os.getenv("API_KEY")
+ENDPOINT_URL = os.getenv("ENDPOINT_URL")
+
+if not API_KEY or not ENDPOINT_URL:
+    st.error("API_KEY or ENDPOINT_URL is missing in the .env file.")
 
 # Function to query MaaS Mistral model
 def query_mistral(prompt):
